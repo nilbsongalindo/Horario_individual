@@ -1,150 +1,44 @@
 UFFLP version 2.0 over Coin-Cbc 2.4 by Artur Alves Pessoa
 Clp0033I Presolve took 0.00 seconds (total 0.00)
 Clp0031I Matrix can not be converted into +- 1
-Clp1001I Initial range of elements is 1 to 20
-Clp1003I Final range of elements is 0.230614 to 1
-Clp0022I Absolute values of scaled rhs range from 0.307529 to 6.18716, minimum gap 1e+100
-Clp0020I Absolute values of scaled objective range from 0.316228 to 7.2598
-Clp0021I Absolute values of scaled bounds range from 0.687656 to 3.86697, minimum gap 0.687656
-Clp0006I 0  Obj 0 Primal inf 52.8606 (79)
-Clp0006I 85  Obj 59.25 Primal inf 165.242 (82)
-Clp0006I 170  Obj 86.65 Primal inf 6.95709 (22)
-Clp0006I 205  Obj 86.7071
-Clp0000I Optimal - objective value 86.7071
-Clp0033I Dual took 0.01 seconds (total 0.01)
-Clp0033I Postsolve took 0.00 seconds (total 0.01)
-Clp0032I Optimal objective 86.70714286 - 205 iterations time 0.012, Presolve 0.00
-Cgl0003I 59 fixed, 0 tightened bounds, 289 strengthened rows, 4 substitutions
-Cgl0003I 59 fixed, 0 tightened bounds, 289 strengthened rows, 0 substitutions
-Cgl0003I 18 fixed, 0 tightened bounds, 145 strengthened rows, 7 substitutions
-Cgl0003I 7 fixed, 0 tightened bounds, 59 strengthened rows, 18 substitutions
-Cgl0003I 2 fixed, 0 tightened bounds, 35 strengthened rows, 25 substitutions
-Cgl0003I 0 fixed, 0 tightened bounds, 16 strengthened rows, 26 substitutions
-Cgl0003I 0 fixed, 0 tightened bounds, 95 strengthened rows, 0 substitutions
-Cgl0003I 0 fixed, 0 tightened bounds, 73 strengthened rows, 0 substitutions
-Cgl0003I 0 fixed, 0 tightened bounds, 49 strengthened rows, 0 substitutions
-Cgl0003I 0 fixed, 0 tightened bounds, 27 strengthened rows, 0 substitutions
-Cgl0003I 0 fixed, 0 tightened bounds, 22 strengthened rows, 0 substitutions
-Cgl0003I 0 fixed, 0 tightened bounds, 9 strengthened rows, 0 substitutions
+Clp1001I Initial range of elements is 1 to 4
+Clp1003I Final range of elements is 0.25 to 1
+Clp0022I Absolute values of scaled rhs range from 0.25 to 8, minimum gap 1e+100
+Clp0020I Absolute values of scaled objective range from 1 to 4
+Clp0021I Absolute values of scaled bounds range from 1 to 1, minimum gap 1
+Clp0006I 0  Obj 0 Primal inf 43.25 (65)
+Clp0006I 82  Obj 51.75 Primal inf 96.1111 (44)
+Clp0006I 164  Obj 58 Primal inf 2.825 (10)
+Clp0006I 185  Obj 58
+Clp0000I Optimal - objective value 58
+Clp0033I Dual took 0.00 seconds (total 0.00)
+Clp0033I Postsolve took 0.00 seconds (total 0.00)
+Clp0032I Optimal objective 58 - 185 iterations time 0.002, Presolve 0.00
+Cgl0003I 55 fixed, 0 tightened bounds, 140 strengthened rows, 6 substitutions
+Cgl0003I 55 fixed, 0 tightened bounds, 140 strengthened rows, 0 substitutions
+Cgl0003I 42 fixed, 0 tightened bounds, 67 strengthened rows, 20 substitutions
+Cgl0003I 2 fixed, 0 tightened bounds, 32 strengthened rows, 28 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 18 strengthened rows, 28 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 37 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 28 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 10 strengthened rows, 0 substitutions
 Cgl0003I 0 fixed, 0 tightened bounds, 4 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 0 tightened bounds, 3 strengthened rows, 0 substitutions
 Cgl0003I 0 fixed, 0 tightened bounds, 2 strengthened rows, 0 substitutions
-Cgl0004I processed model has 140 rows, 201 columns (201 integer) and 877 elements
+Cgl0003I 0 fixed, 0 tightened bounds, 1 strengthened rows, 0 substitutions
+Cgl0004I processed model has 70 rows, 119 columns (119 integer) and 429 elements
 Cbc0009I Objective coefficients multiple of 1
-Cbc0046I Root node pass 1, 140 rows, 0 total tight cuts  -  objective 87.65
-Cbc0046I Root node pass 2, 145 rows, 5 total tight cuts  -  objective 89.8333
-Cbc0046I Root node pass 3, 146 rows, 6 total tight cuts  -  objective 90.3611
-Cbc0046I Root node pass 4, 147 rows, 7 total tight cuts  -  objective 90.7143
-Cbc0046I Root node pass 5, 146 rows, 6 total tight cuts  -  objective 91.0734
-Cbc0046I Root node pass 6, 150 rows, 10 total tight cuts  -  objective 91.3218
-Cbc0046I Root node pass 7, 148 rows, 8 total tight cuts  -  objective 91.3754
-Cbc0046I Root node pass 8, 147 rows, 7 total tight cuts  -  objective 91.3944
-Cbc0046I Root node pass 9, 147 rows, 7 total tight cuts  -  objective 91.4149
-Cbc0046I Root node pass 10, 147 rows, 7 total tight cuts  -  objective 91.4476
-Cbc0046I Root node pass 11, 147 rows, 7 total tight cuts  -  objective 91.4561
-Cbc0046I Root node pass 12, 148 rows, 8 total tight cuts  -  objective 91.4994
-Cbc0046I Root node pass 13, 151 rows, 11 total tight cuts  -  objective 91.4996
-Cbc0046I Root node pass 14, 149 rows, 9 total tight cuts  -  objective 91.4998
-Cbc0046I Root node pass 15, 149 rows, 9 total tight cuts  -  objective 91.4999
-Cbc0046I Root node pass 16, 151 rows, 11 total tight cuts  -  objective 91.4999
-Cbc0046I Root node pass 17, 149 rows, 9 total tight cuts  -  objective 91.5
-Cbc0046I Root node pass 18, 150 rows, 10 total tight cuts  -  objective 91.5
-Cbc0046I Root node pass 19, 150 rows, 10 total tight cuts  -  objective 91.5
-Cbc0046I Root node pass 20, 149 rows, 9 total tight cuts  -  objective 91.5
-Cbc0046I Root node pass 21, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 22, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 23, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 24, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 25, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 26, 151 rows, 11 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 27, 152 rows, 12 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 28, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 29, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 30, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 31, 151 rows, 11 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 32, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 33, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 34, 151 rows, 11 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 35, 151 rows, 11 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 36, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 37, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 38, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 39, 151 rows, 11 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 40, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 41, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 42, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 43, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 44, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 45, 151 rows, 11 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 46, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 47, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 48, 151 rows, 11 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 49, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 50, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 51, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 52, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 53, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 54, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 55, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 56, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 57, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 58, 146 rows, 6 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 59, 147 rows, 7 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 60, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 61, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 62, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 63, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 64, 151 rows, 11 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 65, 151 rows, 11 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 66, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 67, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 68, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 69, 151 rows, 11 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 70, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 71, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 72, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 73, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 74, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 75, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 76, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 77, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 78, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 79, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 80, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 81, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 82, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 83, 147 rows, 7 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 84, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 85, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 86, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 87, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 88, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 89, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 90, 150 rows, 10 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 91, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 92, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 93, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 94, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 95, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 96, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 97, 148 rows, 8 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 98, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 99, 149 rows, 9 total tight cuts  -  objective 91.5001
-Cbc0046I Root node pass 100, 147 rows, 7 total tight cuts  -  objective 91.5001
-Cbc0031I 10 added rows had average density of 121.9
-Cbc0013I At root node, 10 cuts changed objective from 87.65 to 91.5051 in 100 passes
+Cbc0046I Root node pass 1, 70 rows, 0 total tight cuts  -  objective 63.5
+Cbc0046I Root node pass 2, 73 rows, 3 total tight cuts  -  objective 64
+Cbc0012I Integer solution of 64 found by rounding after 3 iterations and 0 nodes (0.03 seconds)
+Cbc0031I 3 added rows had average density of 16.3333
+Cbc0013I At root node, 3 cuts changed objective from 63.5 to 64 in 2 passes
 Cbc0014I Cut generator 0 (UFFLP_User) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)
-Cbc0014I Cut generator 1 (Probing) - 16 row cuts average 2.0 elements, 0 column cuts (2 active)  in 0.131 seconds - new frequency is 1
-Cbc0014I Cut generator 2 (Gomory) - 241 row cuts average 188.5 elements, 0 column cuts (5 active)  in 0.043 seconds - new frequency is 1
-Cbc0014I Cut generator 3 (Knapsack) - 20 row cuts average 11.8 elements, 0 column cuts (0 active)  in 0.026 seconds - new frequency is 1
-Cbc0014I Cut generator 4 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.003 seconds - new frequency is 1000
-Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.003 seconds - new frequency is 1000
-Cbc0014I Cut generator 6 (MixedIntegerRounding2) - 26 row cuts average 30.2 elements, 0 column cuts (0 active)  in 0.012 seconds - new frequency is 1
-Cbc0010I After 0 nodes, 1 on tree, 1e+50 best solution, best possible 91.5051 (0.41 seconds)
-Cbc0015I Node 1 Obj 91.5662 Unsat 18 depth 1
-Cbc0015I Node 2 Obj 91.5882 Unsat 18 depth 2
-Cbc0015I Node 3 Obj 91.5909 Unsat 13 depth 3
-Cbc0015I Node 4 Obj 91.6817 Unsat 2 depth 4
-Cbc0016I Integer solution of 92 found by strong branching after 2256 iterations and 5 nodes (0.46 seconds)
-Cbc0001I Search completed - best objective 92, took 2256 iterations and 5 nodes (0.46 seconds)
-Cbc0032I Strong branching done 136 times (1508 iterations), fathomed 1 nodes and fixed 0 variables
-Cbc0035I Maximum depth 4, 0 variables fixed on reduced cost
+Cbc0014I Cut generator 1 (Probing) - 3 row cuts average 2.0 elements, 0 column cuts (3 active)  in 0.001 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Gomory) - 3 row cuts average 23.3 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is 1
+Cbc0014I Cut generator 3 (Knapsack) - 3 row cuts average 14.3 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is 1
+Cbc0014I Cut generator 4 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is 1000
+Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is 1000
+Cbc0014I Cut generator 6 (MixedIntegerRounding2) - 1 row cuts average 29.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is 1
+Cbc0001I Search completed - best objective 64, took 3 iterations and 0 nodes (0.03 seconds)
+Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost

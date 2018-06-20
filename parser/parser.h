@@ -32,10 +32,11 @@ struct Data{
     int numCreditosOp;
     int *identificadorOb;
     int *identificadorOp;
+    string *horario;
 };
 
 extern void atualizaDados (Data *data);
-extern void solveCoin(Data *data, double numeroDePeriodos);
-extern double solveCoin_Y(Data *data, double &numeroDePeriodos);
+extern void solveCoin(Data *data);
+extern double solveCoin_Y(Data *data);
 
 #endif

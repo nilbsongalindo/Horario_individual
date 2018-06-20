@@ -1,7 +1,7 @@
 #include "parser.h"
 
 void atualizaDados(Data* data){
-    ifstream arquivoAluno("instancia.json", ios::in); // Abre instância com dados do aluno
+    ifstream arquivoAluno("instanciaNilbson.json", ios::in); // Abre instância com dados do aluno
     ifstream arquivoHorario("horario.txt", ios::in); // Abre instância com horários das disciplinas
     string horario1;
     
@@ -19,7 +19,7 @@ void atualizaDados(Data* data){
     arquivoHorario.close();
 
     //Fazendo segunda parte
-    string horario[discUteis]; //Variável que armazena todos os horários
+    string *horario = new string[discUteis]; //Variável que armazena todos os horários
     ifstream arquivoHorario2("horario.txt", ios::in); // Abre instância com horários das disciplinas
     string horario2;
     
@@ -35,6 +35,7 @@ void atualizaDados(Data* data){
         }
         temp++;
     }
+    data->horario = horario;
 
     //OPTATIVAS - SEPARANDO AS OBRIGATÓRIAS E CONTANDO O NÚMERO DE OPTATIVAS
     int *identificadorOp = new int[discUteis];
@@ -290,11 +291,12 @@ void atualizaDados(Data* data){
     data->identificador = identificador;
     data->situacao = situacao;
     data->disciplinas = discUteis;
-    data->numPeriodos = 10;
+    data->numPeriodos = 12;
     data->numDisciplinasOp = numOptativas;
     data->numCreditosOp = 16 - qntCreditoOpPago; // De acordo com o sigaa p/ o curso de Engenharia de Computação
     data->identificadorOb = identificadorOb;
     data->identificadorOp = identificadorOp;
+
     //Preenche matriz de choque de horário direto em i
     data->choqueHorarioI = new bool*[data->disciplinas];
     for (int i = 0; i < data->disciplinas; i++){
@@ -303,8 +305,6 @@ void atualizaDados(Data* data){
             data->choqueHorarioI[i][j] = choqueHorario[i][j];
         }
     }
-
-    
 
     //Preenche matriz de pre-requisitos direto em i
     for (int i = 0; i < discUteis; i++){
@@ -348,8 +348,9 @@ void atualizaDados(Data* data){
 }
   
 
-void solveCoin(Data* data, const double numPeriodos){
+void solveCoin(Data* data){
     // Cria problema
+    cout << "NUMERO DE PERIDOSODASOJDASO CERTO?" << data->numPeriodos << endl;
     UFFProblem* prob = UFFLP_CreateProblem();
 
     // Cria variaveis X
@@ -372,7 +373,7 @@ void solveCoin(Data* data, const double numPeriodos){
     UFFLP_AddVariable(prob, (char*)varName.c_str(), 1.0, 10.0, 0, UFFLP_Integer);
 
     //PRIMEIRA RESTRIÇÃO DO MODELO - LIMITE DE CRÉDITOS POR PERÍODO
-    for (int j = 0; j < numPeriodos; j++){
+    for (int j = 0; j < data->numPeriodos; j++){
         s.clear();
         s << "LimCreditos_" << j;
         s >> consName;
@@ -410,7 +411,7 @@ void solveCoin(Data* data, const double numPeriodos){
     s >> consName;
     for (int i = 0; i < data->disciplinas; i++){
         if(!data->situacao[i] && data->identificadorOp[i] != 0){
-            for (int j = 0; j < numPeriodos; j++){
+            for (int j = 0; j < data->numPeriodos; j++){
                 s.clear();
                 s << "X(" << i << "," << j << ")";
                 s >> varName;
@@ -427,7 +428,7 @@ void solveCoin(Data* data, const double numPeriodos){
             s.clear();
             s << "OpUmaVez_" << i;
             s >> consName;
-            for(int j = 0; j < numPeriodos; j++){
+            for(int j = 0; j < data->numPeriodos; j++){
                 s.clear();
                 s << "X(" << i << "," << j << ")";
                 s >> varName;
@@ -446,7 +447,7 @@ void solveCoin(Data* data, const double numPeriodos){
                     s << "PreReq_" << i << "_" << k;
                     s >> consName;
 
-                    for(int j = 0; j < numPeriodos; j++){
+                    for(int j = 0; j < data->numPeriodos; j++){
                         s.clear();
                         s << "X(" << i << "," << j << ")";
                         s >> varName;
@@ -465,7 +466,7 @@ void solveCoin(Data* data, const double numPeriodos){
 
     
     //SEXTA RESTRIÇÃO
-    for(int j = 0; j < numPeriodos; j++){
+    for(int j = 0; j < data->numPeriodos; j++){
         for(int i = 0; i < data->disciplinas; i++){
             if(!data->situacao[i]){
                 for(int k = 0; k < data->disciplinas; k++){
@@ -495,7 +496,7 @@ void solveCoin(Data* data, const double numPeriodos){
     //SÉTIMA RESTRIÇÃO - PERÍODOS NECESSÁRIOS PARA TÉRMINO DO CURSO-N CONSIDERA CONJUNTO ME
     for(int i = 0; i < data->disciplinas; i++){ // Entender contra barra e adicionar conjunto do estagio e monografia
         if(!data->situacao[i]){
-            for(int j = 0; j < numPeriodos; j++){
+            for(int j = 0; j < data->numPeriodos; j++){
                 s.clear();
                 s << "Periodos_Neces_" << i << "_" << j;
                 s >> consName;
@@ -589,7 +590,7 @@ void solveCoin(Data* data, const double numPeriodos){
                     UFFLP_GetSolution( prob, (char*)varName.c_str(), &value );
 
                     if (value > 0.1) {
-                        cout << setw(4) << "Cadeira: " << setw(4) << data->nomeCadeira[i] << setw(60-(data->nomeCadeira[i].size())) << ", Periodo[" << j << "]" << endl;
+                        cout << setw(4) << "Cadeira: " << setw(4) << data->nomeCadeira[i] << setw(60-(data->nomeCadeira[i].size())) << ", Periodo[" << j << "] Horario: " << data->horario[i] << endl;
                         //cout << varName << " = " << value << endl;
                         //O JSON DE SAÍDA SERÁ GERADO AQUI
                         jSaida["Semestre_" + to_string(j)].push_back(data->nomeCadeira[i]); //Para cada cadeira
@@ -609,7 +610,7 @@ void solveCoin(Data* data, const double numPeriodos){
     UFFLP_DestroyProblem( prob );
 }
 
-double solveCoin_Y(Data* data, double &numDePeriodos){
+double solveCoin_Y(Data* data){
     // Cria problema
     UFFProblem* prob = UFFLP_CreateProblem();
 
@@ -758,10 +759,9 @@ double solveCoin_Y(Data* data, double &numDePeriodos){
             
         }
     }
-    
-    
+      
     //SÉTIMA RESTRIÇÃO - PERÍODOS NECESSÁRIOS PARA TÉRMINO DO CURSO-N CONSIDERA CONJUNTO ME
-    for(int i = 0; i < data->disciplinas - 3; i++){ // -3 para não adicionar estagio, tcc1 e tcc2
+    for(int i = 0; i < data->disciplinas; i++){ // -3 para não adicionar estagio, tcc1 e tcc2
         if(!data->situacao[i]){
             for(int j = 0; j < data->numPeriodos; j++){
                 s.clear();
@@ -782,7 +782,7 @@ double solveCoin_Y(Data* data, double &numDePeriodos){
             }
         }
     }
-    
+    /*
     //OITAVA RESTRIÇÃO - FORÇA ESTAGIO E MONOGRAFIA PARA O ULTIMO PERÍODO
     for (int i = data->disciplinas-3; i < data->disciplinas; i++){
         if(!data->situacao[i]){
@@ -802,10 +802,10 @@ double solveCoin_Y(Data* data, double &numDePeriodos){
                     s >> varName;
                     UFFLP_SetCoefficient( prob, (char*)consName.c_str(),(char*)varName.c_str(), -1);
                 }
+                UFFLP_AddConstraint( prob, (char*)consName.c_str(), 0, UFFLP_Greater);
             }
         }
-        UFFLP_AddConstraint( prob, (char*)consName.c_str(), 0, UFFLP_Greater);
-    }
+    }*/
 
     //NONA RESTRIÇÃO
     /*for (int i = 0; i < data->disciplinas; i++){
@@ -824,9 +824,9 @@ double solveCoin_Y(Data* data, double &numDePeriodos){
 
 
     //DÉCIMA RESTRIÇÃO
-    // s.clear();
-    // s << "Y";
-   	// s >> consName;
+    s.clear();
+    s << "Y";
+   	s >> consName;
     s.clear();
     s << "Y";
     s >> varName;
@@ -847,8 +847,7 @@ double solveCoin_Y(Data* data, double &numDePeriodos){
 
         UFFLP_GetObjValue( prob, &value );
         cout << setw(4) << "Valor da funcao objetivo = " << value << endl;
-        numDePeriodos = value;
-
+        data->numPeriodos = value+1;
         //Cria objeto de JSON para registrar a saída de dados p/ o front-end da aplicação
         json jSaida;
         //Baseado no valor da função objetivo(numero de periodos que alcançou), cria o json com a quantidade certas de períodos
@@ -869,7 +868,7 @@ double solveCoin_Y(Data* data, double &numDePeriodos){
 
                     if (value > 0.1) {
                         //cout << varName << " = " << value << endl;
-                        cout << setw(4) << "Cadeira: " << setw(4) << data->nomeCadeira[i] << setw(60-(data->nomeCadeira[i].size())) << ", Periodo[" << j << "]" << endl; 
+                        cout << setw(4) << "Cadeira: " << setw(4) << data->nomeCadeira[i] << setw(60-(data->nomeCadeira[i].size())) << ", Periodo[" << j << "] Horario: " << data->horario[i] << endl; 
 
                         //------------------------------------------------------------------------------------------
                         //O JSON DE SAÍDA SERÁ GERADO AQUI
@@ -886,7 +885,8 @@ double solveCoin_Y(Data* data, double &numDePeriodos){
         jOutput << setw(4) <<  jSaida << endl;
 	    cout << jSaida;
         jOutput.close();
-        data->numPeriodos = numDePeriodos+1;
+        
+        cout << "NUMERO DE PERIDOSODASOJDASO CERTO?" << data->numPeriodos << endl;
         cout << endl;
     }else{
         cout << "Não foi encontrada uma solução ótima, tente novamente mais tarde!" << endl;
