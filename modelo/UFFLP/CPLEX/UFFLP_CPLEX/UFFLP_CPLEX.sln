@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UFFLP_CPLEX", "UFFLP_CPLEX.vcproj", "{8F255FEE-D20D-4715-A710-0CE73F6DC011}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release101|Win32 = Release101|Win32
+		Release102|Win32 = Release102|Win32
+		Release110|Win32 = Release110|Win32
+		Release111|Win32 = Release111|Win32
+		Release121|Win32 = Release121|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Debug|Win32.Build.0 = Debug|Win32
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Release101|Win32.ActiveCfg = Release101|Win32
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Release101|Win32.Build.0 = Release101|Win32
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Release102|Win32.ActiveCfg = Release102|Win32
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Release102|Win32.Build.0 = Release102|Win32
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Release110|Win32.ActiveCfg = Release110|Win32
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Release110|Win32.Build.0 = Release110|Win32
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Release111|Win32.ActiveCfg = Release111|Win32
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Release111|Win32.Build.0 = Release111|Win32
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Release121|Win32.ActiveCfg = Release121|Win32
+		{8F255FEE-D20D-4715-A710-0CE73F6DC011}.Release121|Win32.Build.0 = Release121|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

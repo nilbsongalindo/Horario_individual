@@ -1,0 +1,27 @@
+LIBRARY UFFLP
+EXPORTS
+
+UFFLP_CreateProblem @1
+UFFLP_DestroyProblem @2
+UFFLP_AddVariable @3
+UFFLP_SetCoefficient @4
+UFFLP_AddConstraint @5
+UFFLP_Solve @6
+UFFLP_GetObjValue @7
+UFFLP_GetSolution @8
+UFFLP_GetDualSolution @9
+UFFLP_WriteLP @10
+UFFLP_SetLogInfo @11
+UFFLP_SetCutCallBack @12
+UFFLP_PrintToLog @13
+UFFLP_SetHeurCallBack @14
+UFFLP_GetBestSolutionValue @15
+UFFLP_SetSolution @16
+UFFLP_SetParameter @17
+UFFLP_ChangeObjCoeff @18
+UFFLP_CheckSolution @19
+UFFLP_SetCplexParameter @20
+UFFLP_SetPriority @21
+UFFLP_SetIntCheckCallBack @22
+UFFLP_SetInfeasible @23
+UFFLP_ChangeBounds @24

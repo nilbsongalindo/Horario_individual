@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libUFFLP_CPX102" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/libUFFLP102d" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/libUFFLP102" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-march=i486" />
+			<Add option="-Wall" />
+			<Add option="-fPIC -m32" />
+			<Add option="-D__LINUX__" />
+			<Add option="-DUSE_CPLEX" />
+			<Add directory="/usr/ilog/cplex102/include/ilcplex" />
+		</Compiler>
+		<Linker>
+			<Add option="-m32" />
+			<Add library="/usr/ilog/cplex102/lib/x86_rhel4.0_3.4/static_pic/libcplex.a" />
+			<Add library="pthread" />
+		</Linker>
+		<Unit filename="UFFProblem.cpp" />
+		<Unit filename="UFFProblem.h" />
+		<Unit filename="../UFFLP.cpp" />
+		<Unit filename="../UFFLP.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
